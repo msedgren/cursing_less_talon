@@ -22,9 +22,3 @@ class Actions:
         Move the cursor tho the location marked by the color, shape, and character
         """
         actions.user.idea(f"curse_to_location {pre} {color} {shape} {character}")
-
-    def echo(argOne: str, argTwo: str, argThree: str):
-        """
-        Sends the given strings to intellij as part of an echo command
-        """
-        actions.user.idea(f"echo {argOne} {argTwo} {argThree}")
