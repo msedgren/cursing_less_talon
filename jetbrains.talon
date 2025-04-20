@@ -24,10 +24,25 @@ go past next {user.cursing_color}:
     self.curse_to_relative_location_by_color("next", "post", cursing_color)
 
 select {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
-    self.select_curse_location(cursing_color, cursing_shape, any_alphanumeric_key)
+    self.curse_select("select", cursing_color, cursing_shape, any_alphanumeric_key)
 
 copy {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
-    self.copy_curse_location("copy", cursing_color, cursing_shape, any_alphanumeric_key)
+    self.curse_select("copy", cursing_color, cursing_shape, any_alphanumeric_key)
 
 cut {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
-    self.copy_curse_location("cut", cursing_color, cursing_shape, any_alphanumeric_key)
+    self.curse_select("cut", cursing_color, cursing_shape, any_alphanumeric_key)
+
+clear {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
+    self.curse_select("clear", cursing_color, cursing_shape, any_alphanumeric_key)
+
+select until {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
+    self.curse_select_to("select", cursing_color, cursing_shape, any_alphanumeric_key)
+
+copy until {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
+    self.curse_select_to("copy", cursing_color, cursing_shape, any_alphanumeric_key)
+
+cut until {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
+    self.curse_select_to("cut", cursing_color, cursing_shape, any_alphanumeric_key)
+
+clear until {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
+    self.curse_select_to("clear", cursing_color, cursing_shape, any_alphanumeric_key)

@@ -76,14 +76,14 @@ class Actions:
         """
         actions.user.idea(urllib.parse.quote(f"curse_to_relative_location_by_color {direction} {pre} {color}"))
 
-    def select_curse_location(color: str, shape: str, character: str):
+    def curse_select(mode: str, color: str, shape: str, character: str):
         """
-        Select the token at the location marked by the color, shape, and character
+        Select, copy, cut, or clear the token at the location marked by the color, shape, and character
         """
-        actions.user.idea(urllib.parse.quote(f"curse_select {color} {shape} {character}"))
+        actions.user.idea(urllib.parse.quote(f"curse_select {mode} {color} {shape} {character}"))
 
-    def copy_curse_location(cut: str, color: str, shape: str, character: str):
+    def curse_select_to(mode: str, color: str, shape: str, character: str):
         """
-        Copy or cut the token at the location marked by the color, shape, and character
+        Select, copy, cut, or clear from the current offset to the token at the location marked by the color, shape, and character
         """
-        actions.user.idea(urllib.parse.quote(f"curse_copy {cut} {color} {shape} {character}"))
+        actions.user.idea(urllib.parse.quote(f"curse_select_to {mode} {color} {shape} {character}"))
