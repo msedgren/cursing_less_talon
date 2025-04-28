@@ -31,9 +31,9 @@ Decorations are prioritized based on the cursor position. This means that in den
 will first be added new the cursor. This is due to the nature of a limited number of decoration combinations being possible.
 
 ## Commands
-Note: commands are still being added and will be added in the future. Ranges will be the next focus. For example:
-`select until blue slash air`, `select from blue slash air until red square zip`, etc. To simplify things for issuing commands
-consideration is being given to allowing a section to be marked. `mark until blue slash air`...
+Note: commands are still being added and will be added in the future.
+
+Note: Only commands add by this plugin but not present in [Talonhub/community](https://github.com/talonhub/community) are listed below.
 
 ### Turning things on and off
 - toggle cursing: enable or disable text decorations.
