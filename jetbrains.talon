@@ -46,3 +46,12 @@ cut until {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
 
 clear until {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
     self.curse_select_to("clear", cursing_color, cursing_shape, any_alphanumeric_key)
+
+add cursor {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
+    self.curse_add_cursor(cursing_color, cursing_shape, any_alphanumeric_key)
+
+add <number_small> cursors {user.cursing_vertical_placement}:
+    self.curse_add_cursor_above_or_below(number_small, cursing_vertical_placement)
+
+remove cursor <number_small>:
+    self.remove_cursor(number_small)
