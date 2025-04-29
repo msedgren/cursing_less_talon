@@ -77,10 +77,6 @@ an a character with a yellow circle above it.
 - cut until color shape key: cut from the current location until the end (if beyond) or beginning (if behind)
   of the token at the specified color, shape, and key position.  
   For example: `cut until yellow circle air` will select the token with an a character with a yellow circle above it.
-- cut until color shape key: cut from the current location until the end (if beyond) or beginning (if behind)
-  of the token at the specified color, shape, and key position.  
-  For example: `cut until yellow circle air` will cut from current position until the token with
-  an a character with a yellow circle above it.
 
 
 ### Clearing
@@ -92,15 +88,20 @@ an a character with a yellow circle above it.
   an a character with a yellow circle above it.
 
 
+**The commands to add and remove coursers below are a bit experimental.
+I am still playing with them a bit and I'm not sure yet how exactly they should function**
+
 ### Adding Cursors
 - add cursor color shape key: Add a new cursor at the specified color, shape, and key position.  
   For example: `add cursor red square each` will add a new cursor before the token with an e character with a red square
 above it.
-- add number cursors above: Add the given number of cursors above the primary at the given column.  
-For example: `add 5 cursors above` will add 5 cursors above the current primary cursor.
-- add number cursors below: Add the given number of cursors below the primary at the given column.  
-For example: `add 5 cursors below` will add 5 cursors below the current primary cursor.
+- add number cursor(s) above: Add the given number of cursors above the primary at the given column.  
+For example: `add 5 cursors above` will add 5 cursors above the primary cursor.
+- add number cursor(s) below: Add the given number of cursors below the primary at the given column.  
+For example: `add 1 cursor below` will add 1 cursor below the primary cursor.
 
 ### Removing Cursors
 - remove cursor number: Remove the cursor nth cursor from the editor.  
   For example: `remove curosr 1` will remove the first cursor from top/left to bottom in the editor.
+- remove all secondary cursors: Remove all cursors below the first cursor.  
+  For example: `remove all secondary cursors`.

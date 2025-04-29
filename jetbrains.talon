@@ -53,5 +53,11 @@ add cursor {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>
 add <number_small> cursors {user.cursing_vertical_placement}:
     self.curse_add_cursor_above_or_below(number_small, cursing_vertical_placement)
 
+add one cursor {user.cursing_vertical_placement}:
+    self.curse_add_cursor_above_or_below(1, cursing_vertical_placement)
+
 remove cursor <number_small>:
     self.remove_cursor(number_small)
+
+remove all secondary cursors:
+    self.remove_all_secondary_cursors()
