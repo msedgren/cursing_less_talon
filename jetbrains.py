@@ -61,6 +61,7 @@ and app.bundle: com.jetbrains.jbr.java
 
 mod.list("cursing_color", desc="The colors that can be used with cursing less.")
 mod.list("cursing_shape", desc="The shapes that can be used with cursing less.")
+mod.list("cursing_vertical_placement", desc="Placement of above or below.")
 
 @mod.action_class
 class Actions:
@@ -76,14 +77,38 @@ class Actions:
         """
         actions.user.idea(urllib.parse.quote(f"curse_to_relative_location_by_color {direction} {pre} {color}"))
 
-    def select_curse_location(color: str, shape: str, character: str):
+    def curse_select(mode: str, color: str, shape: str, character: str):
         """
-        Select the token at the location marked by the color, shape, and character
+        Select, copy, cut, or clear the token at the location marked by the color, shape, and character
         """
-        actions.user.idea(urllib.parse.quote(f"curse_select {color} {shape} {character}"))
+        actions.user.idea(urllib.parse.quote(f"curse_select {mode} {color} {shape} {character}"))
 
-    def copy_curse_location(cut: str, color: str, shape: str, character: str):
+    def curse_select_to(mode: str, color: str, shape: str, character: str):
         """
-        Copy or cut the token at the location marked by the color, shape, and character
+        Select, copy, cut, or clear from the current offset to the token at the location marked by the color, shape, and character
         """
-        actions.user.idea(urllib.parse.quote(f"curse_copy {cut} {color} {shape} {character}"))
+        actions.user.idea(urllib.parse.quote(f"curse_select_to {mode} {color} {shape} {character}"))
+
+    def curse_add_cursor(color: str, shape: str, character: str):
+        """
+        Add a new cursor at the location marked by the color, shape, and character
+        """
+        actions.user.idea(urllib.parse.quote(f"curse_add_cursor {color} {shape} {character}"))
+
+    def curse_add_cursor_above_or_below(amount: int, placement: str):
+        """
+        Add amount cursors either above or below the primary cursor
+        """
+        actions.user.idea(urllib.parse.quote(f"curse_add_multiple_cursors {amount} {placement}"))
+
+    def remove_cursor(cursor: int):
+        """
+        Remove the cursor given by the a number from top to bottom of the editor.
+        """
+        actions.user.idea(urllib.parse.quote(f"curse_remove_cursor {cursor}"))
+
+    def remove_all_secondary_cursors():
+        """
+        Remove all of the secondary cursors from the editor
+        """
+        actions.user.idea(urllib.parse.quote(f"curse_remove_all_secondary_cursors"))

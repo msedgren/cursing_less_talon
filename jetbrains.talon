@@ -24,10 +24,40 @@ go past next {user.cursing_color}:
     self.curse_to_relative_location_by_color("next", "post", cursing_color)
 
 select {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
-    self.select_curse_location(cursing_color, cursing_shape, any_alphanumeric_key)
+    self.curse_select("select", cursing_color, cursing_shape, any_alphanumeric_key)
 
 copy {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
-    self.copy_curse_location("copy", cursing_color, cursing_shape, any_alphanumeric_key)
+    self.curse_select("copy", cursing_color, cursing_shape, any_alphanumeric_key)
 
 cut {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
-    self.copy_curse_location("cut", cursing_color, cursing_shape, any_alphanumeric_key)
+    self.curse_select("cut", cursing_color, cursing_shape, any_alphanumeric_key)
+
+clear {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
+    self.curse_select("clear", cursing_color, cursing_shape, any_alphanumeric_key)
+
+select until {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
+    self.curse_select_to("select", cursing_color, cursing_shape, any_alphanumeric_key)
+
+copy until {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
+    self.curse_select_to("copy", cursing_color, cursing_shape, any_alphanumeric_key)
+
+cut until {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
+    self.curse_select_to("cut", cursing_color, cursing_shape, any_alphanumeric_key)
+
+clear until {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
+    self.curse_select_to("clear", cursing_color, cursing_shape, any_alphanumeric_key)
+
+add cursor {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
+    self.curse_add_cursor(cursing_color, cursing_shape, any_alphanumeric_key)
+
+add <number_small> cursors {user.cursing_vertical_placement}:
+    self.curse_add_cursor_above_or_below(number_small, cursing_vertical_placement)
+
+add one cursor {user.cursing_vertical_placement}:
+    self.curse_add_cursor_above_or_below(1, cursing_vertical_placement)
+
+remove cursor <number_small>:
+    self.remove_cursor(number_small)
+
+remove all secondary cursors:
+    self.remove_all_secondary_cursors()
