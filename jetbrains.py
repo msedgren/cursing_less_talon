@@ -62,6 +62,8 @@ and app.bundle: com.jetbrains.jbr.java
 mod.list("cursing_color", desc="The colors that can be used with cursing less.")
 mod.list("cursing_shape", desc="The shapes that can be used with cursing less.")
 mod.list("cursing_vertical_placement", desc="Placement of above or below.")
+mod.list("cursing_selection_type", desc="copy, cut...")
+mod.list("cursing_last_next", desc="last or next")
 
 @mod.action_class
 class Actions:
