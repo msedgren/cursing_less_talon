@@ -1,8 +1,8 @@
 list: user.cursing_shape
 -
-circle: 1
-square: 2
-slash: 3
-backslash: 4
-line: 5
-x: 6
+circle: circle
+square: square
+slash: slash
+backslash: backslash
+line: line
+x: x
