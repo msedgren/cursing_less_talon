@@ -11,50 +11,31 @@ go {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
 go past {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
     self.curse_to_location("post", cursing_color, cursing_shape, any_alphanumeric_key)
 
-go last {user.cursing_color}:
-    self.curse_to_relative_location_by_color("last", "pre", cursing_color)
+go {user.cursing_last_next} {user.cursing_color}:
+    self.curse_to_relative_location_by_color(cursing_last_next, "pre", cursing_color)
 
-go past last {user.cursing_color}:
-    self.curse_to_relative_location_by_color("last", "post", cursing_color)
+go past {user.cursing_last_next} {user.cursing_color}:
+    self.curse_to_relative_location_by_color(cursing_last_next, "post",Save cursing_color)
 
-go next {user.cursing_color}:
-    self.curse_to_relative_location_by_color("next", "pre", cursing_color)
+go declaration {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
+    self.curse_to_location("pre", cursing_color, cursing_shape, any_alphanumeric_key)
+    user.idea("action GotoDeclaration")
 
-go past next {user.cursing_color}:
-    self.curse_to_relative_location_by_color("next", "post", cursing_color)
+{user.cursing_selection_type} {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
+    self.curse_select(cursing_selection_type, cursing_color, cursing_shape, any_alphanumeric_key)
 
-select {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
-    self.curse_select("select", cursing_color, cursing_shape, any_alphanumeric_key)
+{user.cursing_selection_type} until {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
+    self.curse_select_to(cursing_selection_type, cursing_color, cursing_shape, any_alphanumeric_key)
 
-copy {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
-    self.curse_select("copy", cursing_color, cursing_shape, any_alphanumeric_key)
-
-cut {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
-    self.curse_select("cut", cursing_color, cursing_shape, any_alphanumeric_key)
-
-clear {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
-    self.curse_select("clear", cursing_color, cursing_shape, any_alphanumeric_key)
-
-select until {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
-    self.curse_select_to("select", cursing_color, cursing_shape, any_alphanumeric_key)
-
-copy until {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
-    self.curse_select_to("copy", cursing_color, cursing_shape, any_alphanumeric_key)
-
-cut until {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
-    self.curse_select_to("cut", cursing_color, cursing_shape, any_alphanumeric_key)
-
-clear until {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
-    self.curse_select_to("clear", cursing_color, cursing_shape, any_alphanumeric_key)
+{user.cursing_selection_type} {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key> until {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
+    self.curse_to_location("pre", cursing_color, cursing_shape, any_alphanumeric_key)
+    self.curse_select_to(cursing_selection_type, cursing_color_2, cursing_shape_2, any_alphanumeric_key_2)
 
 add cursor {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
     self.curse_add_cursor(cursing_color, cursing_shape, any_alphanumeric_key)
 
-add <number_small> cursors {user.cursing_vertical_placement}:
+add <number_small> (cursors | cursor) {user.cursing_vertical_placement}:
     self.curse_add_cursor_above_or_below(number_small, cursing_vertical_placement)
-
-add one cursor {user.cursing_vertical_placement}:
-    self.curse_add_cursor_above_or_below(1, cursing_vertical_placement)
 
 remove cursor <number_small>:
     self.remove_cursor(number_small)

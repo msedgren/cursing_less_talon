@@ -1,0 +1,6 @@
+list: user.cursing_selection_type
+-
+select: select
+copy: copy
+cut: cut
+clear: clear
