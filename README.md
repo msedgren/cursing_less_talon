@@ -53,6 +53,9 @@ For example: `go past last red` will move the cursor just past the last token wi
 For example: `go next red` will move the cursor to the next token with a red square above it. 
 - go past next color: move the cursor just past the next token with the specified color.  
 For example: `go past next red` will move the cursor just past the next token with a red square above it.
+- go declaration color shape key: move the cursor to the declaration of the token at the specified color, shape, and key position.  
+For example: `go declaration red square each` will move the cursor to the declaration of the token with an e character with a red square above it.
+
 
 ### Selecting
 - select color shape key: select the token at the specified color, shape, and key position.  
@@ -61,6 +64,8 @@ For example: `select red square each` will select the token with an e character 
 of the token at the specified color, shape, and key position.  
 For example: `select until red circle red` will select from the current position until  the token with
 an r character with a red circle above it.
+- select color shape key until color shape key: select from the first token to the second token.  
+For example: `select red square each until yellow circle air` will select from the token with an e character with a red square above it to the token with an a character with a yellow circle above it.
 
 ### Copying
 - copy color shape key: copy the token at the specified color, shape, and key position.  
@@ -69,6 +74,8 @@ For example: `copy red square each` will copy the token with an e character with
 of the token at the specified color, shape, and key position.  
 For example: `copy until yellow circle air` will copy from current position until the token with
 an a character with a yellow circle above it.
+- copy color shape key until color shape key: copy from the first token to the second token.  
+For example: `copy red square each until yellow circle air` will copy from the token with an e character with a red square above it to the token with an a character with a yellow circle above it.
 
 
 ### Cutting
@@ -77,6 +84,8 @@ an a character with a yellow circle above it.
 - cut until color shape key: cut from the current location until the end (if beyond) or beginning (if behind)
   of the token at the specified color, shape, and key position.  
   For example: `cut until yellow circle air` will select the token with an a character with a yellow circle above it.
+- cut color shape key until color shape key: cut from the first token to the second token.  
+  For example: `cut red square each until yellow circle air` will cut from the token with an e character with a red square above it to the token with an a character with a yellow circle above it.
 
 
 ### Clearing
@@ -86,6 +95,8 @@ an a character with a yellow circle above it.
   of the token at the specified color, shape, and key position.  
   For example: `clear until yellow circle air` will clear from current position until the token with
   an a character with a yellow circle above it.
+- clear color shape key until color shape key: clear from the first token to the second token.  
+  For example: `clear red square each until yellow circle air` will clear from the token with an e character with a red square above it to the token with an a character with a yellow circle above it.
 
 
 **The commands to add and remove coursers below are a bit experimental.

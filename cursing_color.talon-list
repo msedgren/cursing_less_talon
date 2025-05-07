@@ -1,7 +1,7 @@
 list: user.cursing_color
 -
-red: 1
-blue: 2
-green: 3
-yellow: 4
-purple: 5
+red: red
+blue: blue
+green: green
+yellow: yellow
+purple: purple
