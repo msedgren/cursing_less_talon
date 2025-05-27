@@ -15,25 +15,28 @@ Example:
 ## Installation
 1. Clone this repository to `~/.talon/user`
 2. Follow the steps to build and install the [Cursing Less IntelliJ Plugin](https://github.com/msedgren/cursing_less)
-Note: this will eventually be published to the marketplace.
-3. Consider adjusting the line height to give more space for the tokens: Settings -> Editor -> Font. A value 0.2
-higher than the default should work well (1.4).
+3. Adjust the line height to give more space for the tokens: Settings -> Editor -> Font. A value 0.2 or 0.3
+higher than the default should work well (1.4 or 1.5).
+4. Enable Reader Mode and check Increased Line Height.
+5. Optionally check plugin settings to alter colors, shapes, and pattern matching for tokens. 
 
 ## Usage
 
-Commands mostly follow a structure of command color shape key.
+Commands mostly follow a structure of verb color shape key.
 
-Default colors are red, purple, green, blue, and yellow.
+Default colors are red, purple, green, blue, and yellow. New colors may be defined but will need to be added to the
+color list.
 
-The defined shapes are square, circle, line, 'X', slash, and backslash.
+The defined shapes are square, circle, line, 'X', slash, backslash, triangle, crescent, heart, and star.
 
 Decorations are prioritized based on the cursor position. This means that in dense sections with lots of repetition,
-will first be added new the cursor. This is due to the nature of a limited number of decoration combinations being possible.
+decorations will first be added nearer to the cursor. This is due to the limited number of decoration
+combinations that are possible.
 
 ## Commands
-Note: commands are still being added and will be added in the future.
+Note: commands are still being added and refined.
 
-Note: Only commands add by this plugin but not present in [Talonhub/community](https://github.com/talonhub/community) are listed below.
+Note: Only commands added by this plugin but not present in [Talonhub/community](https://github.com/talonhub/community) are listed below.
 
 ### Turning things on and off
 - toggle cursing: enable or disable text decorations.
@@ -99,7 +102,7 @@ For example: `copy red square each until yellow circle air` will copy from the t
   For example: `clear red square each until yellow circle air` will clear from the token with an e character with a red square above it to the token with an a character with a yellow circle above it.
 
 
-**The commands to add and remove coursers below are a bit experimental.
+**The commands to add and remove coursers, mark text, and swap text below are a bit experimental.
 I am still playing with them a bit and I'm not sure yet how exactly they should function**
 
 ### Adding Cursors
@@ -116,3 +119,21 @@ For example: `add 1 cursor below` will add 1 cursor below the primary cursor.
   For example: `remove curosr 1` will remove the first cursor from top/left to bottom in the editor.
 - remove all secondary cursors: Remove all cursors below the first cursor.  
   For example: `remove all secondary cursors`.
+
+### Marking Cursors
+- mark number: Mark the primary selection with the number given.  
+  For example: `mark 1` will mark the selected content and store it in mark 1.
+- past mark number: Paste the content of the mark with the given number at the current location.  
+  For example: `past mark 1` will paste the content of the mark 1 at the current cursor position.
+- remove mark number: Remove the mark with the given number.  
+  For example: `remove mark 1` will remove the mark 1.
+- remove all marks: Remove all marks from the editor.  
+  For example: `remove all marks` will clear all marks that have been set.
+- toggle marks window: Toggle the display of the marks tool window.  
+  For example: `toggle marks window` will show or hide the marks tool window.
+
+### Swapping
+- swap selections number number: Swap the selections of two cursors given by their numbers.  
+  For example: `swap selections 1 2` will swap the selections of cursor 1 and cursor 2.
+- swap selection_type color shape key with color shape key: Swap a token (color, shape, and character) with another token.  
+  For example: `swap select red square each with blue circle bee` will swap the token with an e character with a red square above it with the token with a b character with a blue circle above it.

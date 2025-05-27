@@ -15,7 +15,7 @@ go {user.cursing_last_next} {user.cursing_color}:
     self.curse_to_relative_location_by_color(cursing_last_next, "pre", cursing_color)
 
 go past {user.cursing_last_next} {user.cursing_color}:
-    self.curse_to_relative_location_by_color(cursing_last_next, "post",Save cursing_color)
+    self.curse_to_relative_location_by_color(cursing_last_next, "post", cursing_color)
 
 go declaration {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
     self.curse_to_location("pre", cursing_color, cursing_shape, any_alphanumeric_key)
@@ -27,7 +27,14 @@ go declaration {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_
 {user.cursing_selection_type} until {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
     self.curse_select_to(cursing_selection_type, cursing_color, cursing_shape, any_alphanumeric_key)
 
+{user.cursing_selection_type} and tell {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
+    self.curse_select_to(cursing_selection_type, cursing_color, cursing_shape, any_alphanumeric_key)
+
 {user.cursing_selection_type} {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key> until {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
+    self.curse_to_location("pre", cursing_color, cursing_shape, any_alphanumeric_key)
+    self.curse_select_to(cursing_selection_type, cursing_color_2, cursing_shape_2, any_alphanumeric_key_2)
+
+{user.cursing_selection_type} {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key> and tell {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
     self.curse_to_location("pre", cursing_color, cursing_shape, any_alphanumeric_key)
     self.curse_select_to(cursing_selection_type, cursing_color_2, cursing_shape_2, any_alphanumeric_key_2)
 
@@ -42,3 +49,24 @@ remove cursor <number_small>:
 
 remove all secondary cursors:
     self.remove_all_secondary_cursors()
+
+mark <number_small>:
+    self.curse_mark(number_small)
+
+past mark <number_small>:
+    self.curse_paste_mark(number_small)
+
+remove mark <number_small>:
+    self.curse_remove_mark(number_small)
+
+remove all marks:
+    self.curse_clear_all_marks()
+
+toggle marks window:
+    self.curse_toggle_marks_window()
+
+swap selection <number_small> with <number_small>:
+    self.curse_swap_selections(number_small_1, number_small_2)
+
+swap {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key> with {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
+    self.curse_swap_tokens(cursing_color, cursing_shape, any_alphanumeric_key, cursing_color_2, cursing_shape_2, any_alphanumeric_key_2)

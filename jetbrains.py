@@ -114,3 +114,45 @@ class Actions:
         Remove all of the secondary cursors from the editor
         """
         actions.user.idea(urllib.parse.quote(f"curse_remove_all_secondary_cursors"))
+
+    def curse_mark(cursor: int):
+        """
+        Mark the primary selection with a number given.
+        """
+        actions.user.idea(urllib.parse.quote(f"curse_mark {cursor}"))
+
+    def curse_paste_mark(cursor: int):
+        """
+        Paste the content of the mark with the given number at the current location.
+        """
+        actions.user.idea(urllib.parse.quote(f"curse_paste_mark {cursor}"))
+
+    def curse_remove_mark(cursor: int):
+        """
+        Remove the given mark
+        """
+        actions.user.idea(urllib.parse.quote(f"curse_remove_mark {cursor}"))
+
+    def curse_clear_all_marks():
+        """
+        Remove all marks from the editor.
+        """
+        actions.user.idea(urllib.parse.quote(f"curse_clear_all_marks"))
+
+    def curse_toggle_marks_window():
+        """
+        Toggle the display of the marks tool window.
+        """
+        actions.user.idea(urllib.parse.quote(f"curse_toggle_marks_window"))
+
+    def curse_swap_selections(cursor1: int, cursor2: int):
+        """
+        Swap the selections of two cursors given by their numbers.
+        """
+        actions.user.idea(urllib.parse.quote(f"curse_swap_selections {cursor1} {cursor2}"))
+
+    def curse_swap_tokens(color1: str, shape1: str, character1: str, color2: str, shape2: str, character2: str):
+        """
+        Swap a token (color, shape, and character) with another token.
+        """
+        actions.user.idea(urllib.parse.quote(f"curse_swap_tokens {color1} {shape1} {character1} {color2} {shape2} {character2}"))
