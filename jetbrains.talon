@@ -38,6 +38,9 @@ go declaration {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_
     self.curse_to_location("pre", cursing_color, cursing_shape, any_alphanumeric_key)
     self.curse_select_to(cursing_selection_type, cursing_color_2, cursing_shape_2, any_alphanumeric_key_2)
 
+{user.cursing_selection_type} current:
+    self.curse_select_current_token(cursing_selection_type)
+
 add cursor {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
     self.curse_add_cursor(cursing_color, cursing_shape, any_alphanumeric_key)
 
