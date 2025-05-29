@@ -91,11 +91,11 @@ class Actions:
         """
         actions.user.idea(urllib.parse.quote(f"curse_token {mode}"))
 
-    def curse_select_to(mode: str, color: str, shape: str, character: str):
+    def curse_select_to(mode: str, pre: str, color: str, shape: str, character: str):
         """
         Select, copy, cut, or clear from the current offset to the token at the location marked by the color, shape, and character
         """
-        actions.user.idea(urllib.parse.quote(f"curse_select_to {mode} {color} {shape} {character}"))
+        actions.user.idea(urllib.parse.quote(f"curse_select_to {mode} {pre} {color} {shape} {character}"))
 
     def curse_add_cursor(color: str, shape: str, character: str):
         """

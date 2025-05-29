@@ -25,18 +25,24 @@ go declaration {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_
     self.curse_select(cursing_selection_type, cursing_color, cursing_shape, any_alphanumeric_key)
 
 {user.cursing_selection_type} until {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
-    self.curse_select_to(cursing_selection_type, cursing_color, cursing_shape, any_alphanumeric_key)
+    self.curse_select_to(cursing_selection_type, "post", cursing_color, cursing_shape, any_alphanumeric_key)
 
 {user.cursing_selection_type} and tell {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
-    self.curse_select_to(cursing_selection_type, cursing_color, cursing_shape, any_alphanumeric_key)
+    self.curse_select_to(cursing_selection_type, "post", cursing_color, cursing_shape, any_alphanumeric_key)
+
+{user.cursing_selection_type} until before {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
+    self.curse_select_to(cursing_selection_type, "pre", cursing_color, cursing_shape, any_alphanumeric_key)
+
+{user.cursing_selection_type} and tell before {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
+    self.curse_select_to(cursing_selection_type, "pre", cursing_color, cursing_shape, any_alphanumeric_key)
 
 {user.cursing_selection_type} {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key> until {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
     self.curse_to_location("pre", cursing_color, cursing_shape, any_alphanumeric_key)
-    self.curse_select_to(cursing_selection_type, cursing_color_2, cursing_shape_2, any_alphanumeric_key_2)
+    self.curse_select_to(cursing_selection_type, "post", cursing_color_2, cursing_shape_2, any_alphanumeric_key_2)
 
 {user.cursing_selection_type} {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key> and tell {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
     self.curse_to_location("pre", cursing_color, cursing_shape, any_alphanumeric_key)
-    self.curse_select_to(cursing_selection_type, cursing_color_2, cursing_shape_2, any_alphanumeric_key_2)
+    self.curse_select_to(cursing_selection_type, "post", cursing_color_2, cursing_shape_2, any_alphanumeric_key_2)
 
 {user.cursing_selection_type} current:
     self.curse_select_current_token(cursing_selection_type)

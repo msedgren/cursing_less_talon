@@ -65,9 +65,12 @@ For example: `go declaration red square each` will move the cursor to the declar
 For example: `select red square each` will select the token with an e character with a red square above it.
 - select current: select the token at the current cursor position.  
 For example: `select current` will select the token where the cursor is currently positioned.
-- select until color shape key: select from the current location until the end (if beyond) or beginning (if behind)
+- select until color shape key: select from the current location until the end
 of the token at the specified color, shape, and key position.  
 For example: `select until red circle red` will select from the current position until  the token with
+- select until before color shape key: select from the current location until the beginning
+  of the token at the specified color, shape, and key position.  
+  For example: `select until before red circle red` will select from the current position until just before the token with
 an r character with a red circle above it.
 - select color shape key until color shape key: select from the first token to the second token.  
 For example: `select red square each until yellow circle air` will select from the token with an e character with a red square above it to the token with an a character with a yellow circle above it.
@@ -77,10 +80,14 @@ For example: `select red square each until yellow circle air` will select from t
 For example: `copy red square each` will copy the token with an e character with a red square above it.
 - copy current: copy the token at the current cursor position.  
 For example: `copy current` will copy the token where the cursor is currently positioned.
-- copy until color shape key: copy from the current location until the end (if beyond) or beginning (if behind)
+- copy until color shape key: copy from the current location until the end
 of the token at the specified color, shape, and key position.  
 For example: `copy until yellow circle air` will copy from current position until the token with
 an a character with a yellow circle above it.
+- copy until before color shape key: copy from the current location until the beginning
+  of the token at the specified color, shape, and key position.  
+  For example: `copy until before yellow circle air` will copy from current position until just before the token with
+  an a character with a yellow circle above it.
 - copy color shape key until color shape key: copy from the first token to the second token.  
 For example: `copy red square each until yellow circle air` will copy from the token with an e character with a red square above it to the token with an a character with a yellow circle above it.
 
@@ -90,9 +97,12 @@ For example: `copy red square each until yellow circle air` will copy from the t
   For example: `cut red square each` will cut the token with an e character with a red square above it.
 - cut current: cut the token at the current cursor position.  
   For example: `cut current` will cut the token where the cursor is currently positioned.
-- cut until color shape key: cut from the current location until the end (if beyond) or beginning (if behind)
-  of the token at the specified color, shape, and key position.  
+- cut until color shape key: cut from the current location until the end
+  of the token at the specified color, shape, and key position.
   For example: `cut until yellow circle air` will select the token with an a character with a yellow circle above it.
+- cut until before color shape key: cut from the current location until the beginning
+  of the token at the specified color, shape, and key position.
+  For example: `cut until before yellow circle air` will select until just before the token with an a character with a yellow circle above it.
 - cut color shape key until color shape key: cut from the first token to the second token.  
   For example: `cut red square each until yellow circle air` will cut from the token with an e character with a red square above it to the token with an a character with a yellow circle above it.
 
@@ -105,6 +115,10 @@ For example: `copy red square each until yellow circle air` will copy from the t
 - clear until color shape key: clear from the current location until the end (if beyond) or beginning (if behind)
   of the token at the specified color, shape, and key position.  
   For example: `clear until yellow circle air` will clear from current position until the token with
+  an a character with a yellow circle above it.
+- clear until before color shape key: clear from the current location until the beginning
+  of the token at the specified color, shape, and key position.  
+  For example: `clear until before yellow circle air` will clear from current position until just before the token with
   an a character with a yellow circle above it.
 - clear color shape key until color shape key: clear from the first token to the second token.  
   For example: `clear red square each until yellow circle air` will clear from the token with an e character with a red square above it to the token with an a character with a yellow circle above it.
@@ -135,7 +149,7 @@ For example: `add 1 cursor below` will add 1 cursor below the primary cursor.
   For example: `past mark 1` will paste the content of the mark 1 at the current cursor position.
 - remove mark number: Remove the mark with the given number.  
   For example: `remove mark 1` will remove the mark 1.
-- remove all marks: Remove all marks from the editor.  
+- remove all marks: Remove all marks from the editor.
   For example: `remove all marks` will clear all marks that have been set.
 - toggle marks window: Toggle the display of the marks tool window.  
   For example: `toggle marks window` will show or hide the marks tool window.
