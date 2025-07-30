@@ -62,7 +62,7 @@ remove all secondary cursors:
 mark <number_small>:
     self.curse_mark(number_small)
 
-past mark <number_small>:
+paste mark <number_small>:
     self.curse_paste_mark(number_small)
 
 remove mark <number_small>:

@@ -145,8 +145,8 @@ For example: `add 1 cursor below` will add 1 cursor below the primary cursor.
 ### Marking Cursors
 - mark number: Mark the primary selection with the number given.  
   For example: `mark 1` will mark the selected content and store it in mark 1.
-- past mark number: Paste the content of the mark with the given number at the current location.  
-  For example: `past mark 1` will paste the content of the mark 1 at the current cursor position.
+- paste mark number: Paste the content of the mark with the given number at the current location.  
+  For example: `paste mark 1` will paste the content of the mark 1 at the current cursor position.
 - remove mark number: Remove the mark with the given number.  
   For example: `remove mark 1` will remove the mark 1.
 - remove all marks: Remove all marks from the editor.
