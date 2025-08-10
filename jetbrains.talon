@@ -74,8 +74,8 @@ remove all marks:
 toggle marks window:
     self.curse_toggle_marks_window()
 
-swap selection <number_small> with <number_small>:
+swap selection <number_small> (with | width) <number_small>:
     self.curse_swap_selections(number_small_1, number_small_2)
 
-swap {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key> with {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
+swap {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key> (with | width) {user.cursing_color} {user.cursing_shape} <user.any_alphanumeric_key>:
     self.curse_swap_tokens(cursing_color, cursing_shape, any_alphanumeric_key, cursing_color_2, cursing_shape_2, any_alphanumeric_key_2)
